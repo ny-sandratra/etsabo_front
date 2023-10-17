@@ -1,0 +1,701 @@
+<div class="container">
+    <div class="title">
+        <h3 class="h3">Assistance médicale virtuelle</h3>
+    </div>
+    <form method="post" id="diagnoForm" #formDiagnostic="ngForm" (submit)="sendRequest()" >
+        <h4>Veuillez remplir ces questionnaires pour une avoir un avis de l'assistance médicale virtuelle</h4>
+        <!-- Peau et symptômes cutanés -->
+        <details class="details">
+            <summary>Peau et symptômes cutanés</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des démangeaisons sur votre peau, vous donnant envie de vous gratter
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['itching']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué des changements d'apparence ou de texture sur votre peau ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['skin_rash']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous constaté des zones enflées ou des éruptions cutanées sur votre peau ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['nodal_skin_eruptions']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué des ulcères ou des plaies ouvertes sur votre langue ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['ulcers_on_tongue']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous des boutons ou des lésions cutanées remplis de pus ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['pus_filled_pimples']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Avez-vous une desquamation ou une perte de peau ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['skin_peeling']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Votre peau a-t-elle pris une teinte jaunâtre ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['yellowish_skin']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué un jaunissement du blanc de vos yeux ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['yellowing_of_eyes']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Vos yeux semblent-ils creux ou enfoncés ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['sunken_eyes']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué des taches rouges ou des éruptions cutanées sur votre corps ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['red_spots_over_body']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+        </details>
+        <!-- Fièvre et symptômes généraux  -->
+        <details class="details">
+            <summary>Fièvre et symptômes généraux</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous une légère fièvre ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['mild_fever']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des douleurs ou des maux de tête ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['headache']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous une température corporelle anormalement élevée ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['high_fever']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Transpirez-vous excessivement ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['sweating']" value="1">
+                    </label>
+
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Êtes-vous fatigué(e), faible ou manquez-vous d'énergie ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['fatigue']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Ressentez-vous un manque d'énergie ou une sensation de fatigue et de lassitude ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['lethargy']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une sensation générale de malaise, de maladie ou de mal-être ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['malaise']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous une fréquence cardiaque anormalement rapide ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['fast_heart_rate']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+
+        </details>
+        <!-- Système digestif -->
+        <details class="details">
+            <summary>Système digestif</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous des épisodes de vomissements forcés ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['vomiting']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Ressentez-vous des douleurs ou des inconforts dans l'abdomen ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['abdominal_pain']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Éprouvez-vous des douleurs ou des malaises dans l'estomac après avoir mangé ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['indigestion']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué des taches de sang pendant la miction ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['spotting_']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une sensation de brûlure ou des douleurs lors de la miction ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['burning_micturition']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Rencontrez-vous des difficultés à évacuer ou avez-vous des selles peu fréquentes ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['constipation']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous des selles fréquentes et liquides ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['diarrhoea']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Éprouvez-vous des douleurs ou des inconforts dans votre abdomen ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['stomach_pain']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une sensation de brûlure ou un inconfort dans votre poitrine ou votre
+                            estomac ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['acidity']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une sensation de nausée ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['nausea']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Votre estomac présente-t-il un gonflement visible ou une distension ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['swelling_of_stomach']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une défaillance soudaine et sévère de votre foie ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['acute_liver_failure']" value="1">
+                    </label>
+                </li>
+            </ul>
+        </details>
+        <!-- Symptômes respiratoires -->
+        <details class="details">
+            <summary>Symptômes respiratoires</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Toussez-vous de manière répétée avec des expulsions d'air soudaines et puissantes ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['cough']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Ressentez-vous une difficulté à respirer ou un essoufflement?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['breathlessness']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Votre vision est-elle floue ou déformée ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['blurred_and_distorted_vision']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué une perte de poids ?"</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['weight_loss']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Toussez-vous du mucus épais provenant de vos voies respiratoires ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['phlegm']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Ressentez-vous une sensation de picotement ou de douleur dans la gorge ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['throat_irritation']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Éprouvez-vous des douleurs, des pressions ou un malaise dans la poitrine ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['chest_pain']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous du mal à maintenir votre équilibre ou vous sentez-vous instable sur vos pieds
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['loss_of_balance']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Éternuez-vous fréquemment et sans interruption ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['continuous_sneezing']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+
+                </li>
+                <li class="item">
+
+                </li>
+            </ul>
+        </details>
+        <!-- Symptômes musculaires et articulaires -->
+        <details class="details">
+            <summary>Symptômes musculaires et articulaires</summary>
+
+            <ul class="questions">
+
+                <li class="item">
+                    <label class="label" >
+                        <span>Éprouvez-vous des douleurs ou des inconforts dans le dos ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['back_pain']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des douleurs ou des courbatures musculaires ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['muscle_pain']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous des douleurs ou des inconforts au niveau du cou ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['neck_pain']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous des douleurs ou des inconforts au niveau des genoux ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['knee_pain']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une gêne ou des douleurs dans vos articulations ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['joint_pain']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Avez-vous constaté une diminution de la masse musculaire ou une faiblesse musculaire
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['muscle_wasting']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une faiblesse musculaire ou avez-vous du mal à effectuer des tâches
+                            physiques ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['muscle_weakness']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une perte de force ou une difficulté à bouger vos bras ou vos jambes
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['weakness_in_limbs']" value="1">
+                    </label>
+                </li>
+            </ul>
+
+        </details>
+        <!-- Symptômes émotionnels et mentaux -->
+        <details class="details">
+            <summary>Symptômes émotionnels et mentaux</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une inquiétude excessive, de la peur ou un malaise ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['anxiety']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous des changements fréquents d'humeur ou d'état émotionnel ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['mood_swings']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Vous sentez-vous extrêmement triste, sans espoir ou avez-vous perdu tout intérêt pour les
+                            activités ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['depression']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Êtes-vous facilement agacé(e), agité(e) ou avez-vous des accès de colère fréquents
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['irritability']" value="1">
+                    </label>
+                </li>
+            </ul>
+
+        </details>
+        <!-- Symptômes urinaire -->
+        <details class="details">
+            <summary>Système urinaire</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Votre urine est-elle de couleur jaune ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['yellow_urine']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Votre urine est-elle plus foncée que d'habitude ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['dark_urine']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+
+        </details>
+        <!-- Autres symptômes -->
+        <details class="details">
+            <summary>Autres symptômes</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous remarqué une augmentation de votre poids corporel ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['weight_gain']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Avez-vous remarqué une diminution de votre appétit ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['loss_of_appetite']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous remarqué des fluctuations de votre taux de sucre dans le sang ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['irregular_sugar_level']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Rencontrez-vous des difficultés à bouger certaines parties de votre corps en raison de
+                            raideurs ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['movement_stiffness']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des contractions ou des spasmes involontaires soudains dans vos muscles
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['cramps']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Êtes-vous en surpoids de manière significative ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['obesity']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous des difficultés à bouger votre cou ou ressentez-vous une douleur au niveau du
+                            cou lorsque vous le bougez ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['stiff_neck']" value="1">
+                    </label>
+
+                </li>
+                <li class="item">
+                    <label class="label" >
+                        <span>Éprouvez-vous un inconfort ou une douleur dans votre vessie ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['bladder_discomfort']" value="1">
+                    </label>
+                </li>
+
+            </ul>
+            <ul class="questions">
+
+                <li class="item">
+                    <label>
+                        <span>Avez-vous froid et ressentez-vous des frissons ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['chills']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Vous sentez-vous incapable de rester immobile ou avez-vous constamment envie de bouger
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['restlessness']" value="1">
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des tremblements incontrôlables ou des frissons ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['shivering']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des douleurs ou des inconforts lors des mouvements intestinaux ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['pain_during_bowel_movements']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous des douleurs ou des inconforts derrière les yeux ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['pain_behind_the_eyes']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Avez-vous remarqué des ganglions lymphatiques enflés ou agrandis dans votre corps ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['swelled_lymph_nodes']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Vous sentez-vous étourdi(e), instable ou avez-vous une sensation de rotation ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['dizziness']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Vos articulations sont-elles enflées ou plus grosses que d'habitude ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['swelling_joints']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Avez-vous la sensation que vous ou l'environnement autour de vous tournez ou tournoyez
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['spinning_movements']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Ressentez-vous une faiblesse ou un manque de coordination d'un côté de votre corps
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['weakness_of_one_body_side']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Passez-vous plus fréquemment des gaz que d'habitude ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['passage_of_gases']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Avez-vous une apparence ou des caractéristiques suggérant une maladie grave ou une
+                            toxicité ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['toxic_look_']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Toussez-vous du mucus épais et visqueux ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['mucoid_sputum']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Votre toux produit-elle des crachats de couleur rouille ou rougeâtre ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['rusty_sputum']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Rencontrez-vous des difficultés à vous concentrer, à être attentif ou à maintenir votre
+                            attention ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['lack_of_concentration']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Rencontrez-vous des anomalies ou des perturbations de votre vision ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['visual_disturbances']" value="1">
+                    </label>
+                </li>
+            </ul>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Y a-t-il du sang présent dans les crachats que vous toussez ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['blood_in_sputum']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                    <label>
+                        <span>Avez-vous développé des vésicules remplies de liquide ou des zones surélevées sur votre
+                            peau ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['blister']" value="1">
+                    </label>
+                </li>
+            </ul>
+
+        </details>
+        <!-- Antécédents médicaux et familiaux -->
+        <details class="details">
+            <summary>Antécédents médicaux et familiaux</summary>
+            <ul class="questions">
+                <li class="item">
+                    <label>
+                        <span>Y a-t-il des antécédents de symptômes ou de maladies similaires dans votre famille
+                            ?</span>
+                        <input type="checkbox" [ngModelOptions]="{ standalone: true }" class="checkbox" [ngModelOptions]="{ standalone: true }" [(ngModel)]="symptoms['family_history']" value="1">
+                    </label>
+                </li>
+                <li class="item">
+                </li>
+            </ul>
+        </details>
+        <button class="send" id="send" type="submit"  > Envoyer </button>
+    </form>
+</div>
+<div class="overlay" [style.display] ="overlayVisible ? 'flex' : 'none'" >
+    <div class="loader" id="loader" [style.display]="loaderVisible ? 'block' : 'none'"></div>
+    <div id="message" class="message" [innerHTML]="messageHTMLSafe" [style.display]="messageVisible ? 'block' : 'none'" >
+        
+    </div>
+
+</div>

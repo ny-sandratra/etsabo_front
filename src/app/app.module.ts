@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import { JwtModule } from '@auth0/angular-jwt';
 import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -51,7 +51,15 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem('access_token'), // Nom du champ où vous stockez le token
+        allowedDomains: ['example.com'], // Domaines autorisés (peut être un tableau de domaines)
+        disallowedRoutes: ['example.com/unauthorized'], // Routes non autorisées (peut être un tableau de routes)
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

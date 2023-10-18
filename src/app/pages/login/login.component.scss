@@ -1,17 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-
-.logoIspm{
+.logoIspm {
     width: 140px;
     height: 105px;
-  }
+}
 
-.hero{
+.hero {
     width: 100%;
     min-height: 100vh;
     /* background-image: url(assets/images/medecins.jpg); */
@@ -35,24 +34,23 @@ nav {
     border-bottom: medium dashed green;
 }
 
-.logo{
+.logo {
     width: 140px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 15px;
     transition: 0.5s;
 }
 
-nav ul li:hover{
+nav ul li:hover {
     color: #00796b;
     transform: scale(1.5);
-        
 }
 
-nav ul li::after{
+nav ul li::after {
     content: '';
     width: 0%;
     height: 2px;
@@ -62,29 +60,29 @@ nav ul li::after{
     transition: 1s;
 }
 
-nav ul li:hover::after{
+nav ul li:hover::after {
     width: 100%;
 }
 
-nav ul li .aDuNav{
+nav ul li .aDuNav {
     text-decoration: none;
     color: #333;
     font-weight: 400;
 }
 
-
-.login-btn{
+.login-btn {
     text-decoration: none;
     color: #333;
     margin-right: 15px;
     font-weight: 400;
     transition: 0.5s;
 }
-.login-btn:hover{
+
+.login-btn:hover {
     color: #1acbeb;
 }
 
-.btn{
+.btn {
     display: inline-block;
     text-decoration: none;
     padding: 14px 40px;
@@ -95,11 +93,12 @@ nav ul li .aDuNav{
     border-top-right-radius: 0;
     transition: 0.5s;
 }
-.btn:hover{
+
+.btn:hover {
     border-top-right-radius: 30px;
 }
 
-.content{
+.content {
     width: 1490px;
     height: auto;
     inset: 4px;
@@ -108,7 +107,7 @@ nav ul li .aDuNav{
     position: relative;
 }
 
-.content .par{
+.content .par {
     font-size: 15px;
     padding-left: 10px;
     padding-bottom: 20px;
@@ -118,7 +117,7 @@ nav ul li .aDuNav{
     line-height: 20px;
 }
 
-.content h1{
+.content h1 {
     font-family: 'Times New Roman';
     font-size: 35px;
     color: #1acbeb;
@@ -128,8 +127,7 @@ nav ul li .aDuNav{
     letter-spacing: 2px;
 }
 
-.content .cn{
-    
+.content .cn {
     padding: 14px 40px;
     font-size: 14px;
     background-image: linear-gradient(45deg, #008102, #8fe31c);
@@ -140,36 +138,37 @@ nav ul li .aDuNav{
     border-radius: 30px;
     border-top-right-radius: 0;
     cursor: pointer;
-    transition: .4s ease; 
+    transition: .4s ease;
 }
-.content .cn:hover{
+
+.content .cn:hover {
     border-top-right-radius: 30px;
 }
-.content .cn a{
+
+.content .cn a {
     color: #fff;
     text-decoration: none;
 }
 
-
-.form{
+.form {
     text-align: center;
     align-items: center;
     width: 325px;
     height: 400px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
     position: absolute;
     top: 165px;
     left: 780px;
-    transform: translate(0%,-5%);
+    transform: translate(0%, -5%);
     border-radius: 10px;
     padding-top: 10px;
 }
-.form .lien:hover{
+
+.form .lien:hover {
     color: green;
 }
 
-
-.btnn{
+.btnn {
     padding: 5px 40px;
     margin-top: 20px;
     font-size: 14px;
@@ -179,20 +178,23 @@ nav ul li .aDuNav{
     font-size: 18px;
     border-radius: 30px;
     border-top-right-radius: 0;
-    transition: .4s ease; 
+    transition: .4s ease;
 }
-.btnn:hover{
+
+.btnn:hover {
     border-top-right-radius: 30px;
 }
-.content a{
+
+.content a {
     color: #fff;
     text-decoration: none;
 }
-.content p{
+
+.content p {
     color: #00796b;
 }
 
-.form h2{
+.form h2 {
     width: 220px;
     font-family: sans-serif;
     text-align: center;
@@ -204,7 +206,7 @@ nav ul li .aDuNav{
     padding: 8px;
 }
 
-.form input{
+.form input {
     width: 240px;
     height: 35px;
     background: transparent;
@@ -219,45 +221,52 @@ nav ul li .aDuNav{
     font-family: sans-serif;
 }
 
-.form input:focus{
+.form input:focus {
     outline: none;
 }
 
-::placeholder{
+::placeholder {
     font-family: Arial;
 }
 
-.form .link{
+.form .link {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
     width: 100px;
 }
-.form .lien{
+
+.form .lien {
     font-size: 15px;
     width: 100px;
     margin-left: 49px;
 }
 
-.liw{
+.liw {
     text-align: center;
     margin-top: -20px;
     width: 100px;
 }
 
+.authmessage {
+    color: rgb(211, 0, 0) !important;
+    margin-top: 5px;
+}
 
-.icons a{
+.icons a {
     text-decoration: none;
     color: #fff;
 }
-.icons i{
+
+.icons i {
     color: #fff;
     font-size: 25px;
     padding-left: 14px;
     margin-top: -10px;
     transition: 0.3s ease;
 }
-.icons i:hover{
+
+.icons i:hover {
     color: #00796b;
 }
 
@@ -265,19 +274,19 @@ nav ul li .aDuNav{
     opacity: 0;
     transform: translateX(30px);
     animation: moveleft 1s linear forwards;
-    animation-delay: 0.5s; 
+    animation-delay: 0.5s;
 }
 
 .par.anim {
     animation-delay: 1s;
-  }
+}
 
 .cn.anim {
-  animation-delay: 2s;
+    animation-delay: 2s;
 }
 
 .divP {
-    margin: 10px 0; 
+    margin: 10px 0;
     margin-left: 35px;
     align-items: center;
     width: 200px;
@@ -285,22 +294,20 @@ nav ul li .aDuNav{
     // margin:10px 0 30px 35px;
 }
 
-
-.content .form .divP.anim p{
+.content .form .divP.anim p {
     align-items: center;
-    margin:5px 0 5px;
+    margin: 5px 0 5px;
     width: 100px;
     color: #1acbeb;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    animation: typing 2.5s steps(378)  forwards, fade-in 0.5s 4.5s forwards;
+    animation: typing 2.5s steps(378) forwards, fade-in 0.5s 4.5s forwards;
     visibility: hidden;
     animation-delay: 3.5s;
-    
 }
 
-.content .form .divP.anim p::after{
+.content .form .divP.anim p::after {
     content: "";
     position: absolute;
     display: block;
@@ -313,29 +320,40 @@ nav ul li .aDuNav{
 }
 
 @keyframes typing {
-    from{width: 0;}
-    to{width: 100%;}
-}
-
-@keyframes cursor{
-    0%{ opacity: 1; }
-    50%{ opacity: 0; }
-    100%{ opacity: 1; }
-}
-
-@keyframes fade-in {
-    to { visibility: visible; opacity: 1; }
-} 
-  
-  .form.anim {
-    animation-delay: 4.5s; 
-}
-  
-@keyframes moveleft {
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
+@keyframes fade-in {
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.form.anim {
+    animation-delay: 4.5s;
+}
+
+@keyframes moveleft {
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

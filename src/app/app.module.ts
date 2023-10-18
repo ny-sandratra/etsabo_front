@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { JwtModule } from '@auth0/angular-jwt';
 import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
+const jwtModuleOptions: JwtModuleOptions = {
+  config: {
+    tokenGetter: tokenGetter,
+    allowedDomains: ['http://localhost:5000'], // Remplacez par le domaine de votre API
+    disallowedRoutes: [''], // Remplacez par les routes non protégées
+  },
+};
 
 const routes: Routes = [
   {
@@ -52,6 +61,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
+    JwtModule.forRoot(jwtModuleOptions),
     HttpClientModule,
     JwtModule.forRoot({
       config: {

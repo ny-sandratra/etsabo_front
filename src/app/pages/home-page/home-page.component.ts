@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import * as AOS from 'aos';
 
 
@@ -12,7 +13,17 @@ import * as AOS from 'aos';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jwtHelper: JwtHelperService) {
+    const token : any = localStorage.getItem('access_token');
+    const decodedToken = this.jwtHelper.decodeToken(token);
+
+    // Vous pouvez accéder aux informations du token décrypté
+    console.log(decodedToken);
+
+    if (!this.jwtHelper.isTokenExpired(token)) {
+      // Le token n'a pas expiré, vous pouvez rediriger ici
+    }
+  }
 
   ngOnInit(): void {
     AOS.init();

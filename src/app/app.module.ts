@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
-import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
-
-
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +11,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+import { ClientConnectedComponent } from './pages/client-connected/client-connected.component';
+import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connected.component';
+import { ConsultationComponent } from './pages/consultation/consultation.component';
 
 const routes: Routes = [
   {
@@ -25,8 +25,20 @@ const routes: Routes = [
     component: HomePageComponent,
   },
   {
+    path: 'client',
+    component: ClientConnectedComponent,
+  },
+  {
+    path: 'doctor',
+    component: DoctorConnectedComponent,
+  },
+  {
     path: 'diagnostic',
     component: DiagnosticComponent,
+  },
+  {
+    path: 'consultation',
+    component: ConsultationComponent,
   },
   {
     path: 'register',
@@ -34,8 +46,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
-    pathMatch: 'full', // Assure une redirection complète
+    component:HomePageComponent,
+    // redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
+    // pathMatch: 'full', // Assure une redirection complète
   },
 ];
 
@@ -45,7 +58,10 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomePageComponent,
-    DiagnosticComponent
+    DiagnosticComponent,
+    ClientConnectedComponent,
+    DoctorConnectedComponent,
+    ConsultationComponent
   ],
   imports: [
     BrowserModule,

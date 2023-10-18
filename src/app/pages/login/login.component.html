@@ -33,7 +33,7 @@
 					<p class="authmessage" [innerHTML]="authMessageHTMLSafe"  [style.display]="authMessageVisible ? 'block' : 'none'"></p>
 					<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
 						<input type="username" name="username" placeholder="Username" formControlName="username">
-						<input type="password" name="" placeholder="Mot de passe" formControlName="password">
+						<input type="password" name="password" placeholder="Mot de passe" formControlName="password">
 						<button class="btnn" type="submit">Se connecter</button>
 					</form>
 					<div class="divP anim">

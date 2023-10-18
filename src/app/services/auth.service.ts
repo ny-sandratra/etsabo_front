@@ -16,15 +16,17 @@ export class AuthService {
   login(username: string, password: string): Observable<any> {
     
     const loginData = {
-      username: username,
-      password: password
+      'username': username,
+      'password': password
     };
 
-    // Spécifiez les en-têtes pour la demande POST
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    return this.http.post(this.apiUrl, loginData, { headers: headers });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json', // Indique que vous envoyez des données au format JSON
+      }),
+    };
+    
+    return this.http.post(this.apiUrl, loginData, httpOptions);
   }
       // Méthode pour effectuer la déconnexion
   logout(): void {

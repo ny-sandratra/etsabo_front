@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,13 +27,19 @@ export class LoginComponent  {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
   }
+
   sanitizeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
   submitLogin() : void {
+    this.authMessage = '';
     if (this.loginForm.valid){
+      this.username = this.loginForm.get('username')?.value;
+      this.password = this.loginForm.get('password')?.value;
+
       this.login()
     }
     else{
@@ -44,10 +51,11 @@ export class LoginComponent  {
   }
 
   login(): void {
+
     this.authService.login(this.username, this.password)
     .subscribe( (response : any) => {
         if(response.token) {
-          // console.log('tsy nahazo access' + response);
+          console.log('tsy nahazo access' + response);
           this.authMessageVisible = true;
           this.authMessage = `<span> ${response.message}  </span>`;
           this.authMessageHTMLSafe = this.sanitizeHtml(this.authMessage);
@@ -55,9 +63,9 @@ export class LoginComponent  {
         }
         else{
           this.authMessageVisible = true;
-          this.authMessage = `<span> ${response.message}  </span>`;
+          this.authMessage = `<span> ${response.error.message}  </span>`;
           this.authMessageHTMLSafe = this.sanitizeHtml(this.authMessage);
-          //  console.log('tsy nahazo access' + response);
+          console.log('tsy nahazo access' + response);
         }
     },
     (error : any) => {

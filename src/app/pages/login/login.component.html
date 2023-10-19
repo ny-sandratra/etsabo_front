@@ -30,13 +30,15 @@
 	
 				<button class="cn anim"><a href="#">Creer un compte</a></button>
 				
-	
+
 				<div class="form">
 					<h2>Connexion</h2>
-					<input type="email" name="email" placeholder="Email">
-					<input type="password" name="" placeholder="Mot de passe">
-					<button class="btnn"><a href="#">Se connecter</a></button>
-	
+					<p class="authmessage" [innerHTML]="authMessageHTMLSafe"  [style.display]="authMessageVisible ? 'block' : 'none'"></p>
+					<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+						<input type="username" name="username" placeholder="Username" formControlName="username">
+						<input type="password" name="password" placeholder="Mot de passe" formControlName="password">
+						<button class="btnn" type="submit">Se connecter</button>
+					</form>
 					<div class="divP anim">
 						<p class="link anim">je n'ai pas encore de compte <br></p>
 						<a href="#" class="lien anim">creer un compte ici</a>

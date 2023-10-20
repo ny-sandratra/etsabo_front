@@ -16,9 +16,11 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 import { ClientConnectedComponent } from './pages/client-connected/client-connected.component';
 import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connected.component';
 import { ConsultationComponent } from './pages/consultation/consultation.component';
+
 
 
 export function tokenGetter() {
@@ -63,6 +65,10 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: '',
     component:HomePageComponent,
     // redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
@@ -77,9 +83,11 @@ const routes: Routes = [
     RegisterComponent,
     HomePageComponent,
     DiagnosticComponent,
+    LogoutComponent
     ClientConnectedComponent,
     DoctorConnectedComponent,
     ConsultationComponent
+
   ],
   imports: [
     BrowserModule,

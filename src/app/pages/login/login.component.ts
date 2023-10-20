@@ -1,7 +1,5 @@
 
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
-
-import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -66,7 +64,7 @@ export class LoginComponent  {
           // this.authMessageHTMLSafe = this.sanitizeHtml(this.authMessage);
           const accessToken = response.token;
           localStorage.setItem('access_token', accessToken);
-          this.router.navigate(['']);
+          this.router.navigate(['/client']);
 
         }
         else{

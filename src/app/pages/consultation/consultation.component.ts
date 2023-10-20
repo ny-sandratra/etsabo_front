@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { DropDownComponent } from '../drop-down/drop-down.component';
 import { UserService } from '../../services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-consultation',
@@ -12,8 +13,28 @@ import { UserService } from '../../services/user.service';
 export class ConsultationComponent implements OnInit {
 
   userInfo: any;
+  emailSubject = '';
+  emailRecipient = '';
+  emailMessage = '';
+  
+  constructor(private userService: UserService, private http: HttpClient) { }
 
-  constructor(private userService: UserService) { }
+  sendEmail() {
+    const emailData = {
+      subject: this.emailSubject,
+      recipient: this.emailRecipient,
+      message: this.emailMessage
+    };
+    
+    this.http.post('http://localhost:5000/send', emailData).subscribe(
+      (response) => {
+        console.log('E-mail envoyé avec succès', response);
+      },
+      (error) => {
+        console.error('Erreur lors de l\'envoi de l\'e-mail', error);
+      }
+    );
+  }
 
   ngOnInit(): void {
     const token: any = localStorage.getItem('access_token');

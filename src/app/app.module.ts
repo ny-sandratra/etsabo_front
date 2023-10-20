@@ -65,7 +65,7 @@ const routes: Routes = [
   {
     path: '',
     component:HomePageComponent,
-    // redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
+    //  redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
     // pathMatch: 'full', // Assure une redirection complète
   },
 ];

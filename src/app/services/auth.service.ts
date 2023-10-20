@@ -40,6 +40,7 @@ export class AuthService {
   logout(): void {
    
     localStorage.removeItem('access_token');
+    console.log(localStorage.getItem);
    
   }
 

@@ -1,10 +1,13 @@
-
+		
+		<div class="css-loader">
+			<div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
+		</div>
 		<div class="hero">
 
 			<nav>
 				<a routerLink="/home-page"><img src="assets/images/fanaovana test_png.png" class="logo" alt="logo_e-tsabo"></a>
 				<ul>
-					<li class="liDuNav"><a class="aDuNav" href="index.html" >Accueil</a></li>
+					<li class="liDuNav"><a class="aDuNav" routerLink="" >Accueil</a></li>
 					<!-- <li class="liDuNav"><a class="aDuNav" href="#Apropos" >A propos</a></li>
 					<li class="liDuNav"><a class="aDuNav" href="#Services">Services</a></li>
 					<li class="liDuNav"><a class="aDuNav" href="#Contacts">Contacts</a></li> -->
@@ -25,18 +28,20 @@
 					où que vous soyez.
 				</p>
 	
-				<button class="cn anim"><a href="#">Creer un compte</a></button>
+				<button class="cn anim"><a routerLink="/login">Creer un compte</a></button>
 				
-	
+
 				<div class="form">
 					<h2>Connexion</h2>
-					<input type="email" name="email" placeholder="Email">
-					<input type="password" name="" placeholder="Mot de passe">
-					<button class="btnn"><a href="#">Se connecter</a></button>
-	
+					<p class="authmessage" [innerHTML]="authMessageHTMLSafe"  [style.display]="authMessageVisible ? 'block' : 'none'"></p>
+					<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+						<input type="username" name="username" placeholder="Username" formControlName="username">
+						<input type="password" name="password" placeholder="Mot de passe" formControlName="password">
+						<button class="btnn" type="submit">Se connecter</button>
+					</form>
 					<div class="divP anim">
 						<p class="link anim">je n'ai pas encore de compte <br></p>
-						<a href="#" class="lien anim">creer un compte ici</a>
+						<a routerLink="/register" class="lien anim">créer un compte ici</a>
 						<p class="liw anim">Se connecter avec :</p>
 					</div>
 	

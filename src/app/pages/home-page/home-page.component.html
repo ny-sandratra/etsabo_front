@@ -1,8 +1,8 @@
 
     <!-- Loader Start -->
-    <div class="css-loader">
+   <div class="css-loader" [style.display]="loaderVisible ? 'block' : 'none'">
         <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
-    </div>
+    </div> 
     <!-- Loader End -->
     <div class="hero1">
 
@@ -13,6 +13,7 @@
                 <li class="liDuNav"><a class="aDuNav" [routerLink]="'/apropos'">A propos</a></li>
                 <li class="liDuNav"><a class="aDuNav" [routerLink]="'/Services'">Services</a></li>
                 <li class="liDuNav"><a class="aDuNav" [routerLink]="'/Contacts'">Contacts</a></li>
+              
             </ul>
             <div>
                 <a routerLink="/login" class="login-btn aDuNav">Se connecter</a>

@@ -10,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 
 export function tokenGetter() {
@@ -42,6 +43,10 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: '',
     redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
     pathMatch: 'full', // Assure une redirection complète
@@ -54,7 +59,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomePageComponent,
-    DiagnosticComponent
+    DiagnosticComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

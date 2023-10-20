@@ -3,10 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
-import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
-
-
-
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -14,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 const routes: Routes = [
   {
@@ -27,6 +24,10 @@ const routes: Routes = [
   {
     path: 'diagnostic',
     component: DiagnosticComponent,
+  },
+  {
+    path: 'patient',
+    component: PatientComponent,
   },
   {
     path: 'register',
@@ -45,7 +46,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomePageComponent,
-    DiagnosticComponent
+    DiagnosticComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,

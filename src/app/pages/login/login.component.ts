@@ -14,8 +14,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './login.component.html',
   styleUrls: [
     './login.component.scss',
-    '../../../../node_modules/font-awesome/css/font-awesome.css',],
-    encapsulation: ViewEncapsulation.None
+  '../../../../node_modules/font-awesome/css/font-awesome.css',],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class LoginComponent  {
   username: string = '';

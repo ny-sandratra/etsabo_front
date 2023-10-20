@@ -1,0 +1,34 @@
+<div>
+    <img class="user_pic" src="../assets/images/images/profile.png" alt="user-pic" (click)="toggleMenu()">
+    <img class="logoIspm" src="../assets/images/ispm-logo.png" alt="logoIspm">
+</div>
+<div class="sub-menu-wrap" id="subMenu" [class.open-menu]="menuOpen">
+    <div class="sub-menu">
+        <div class="user-info">
+            <img src="../assets/images/images/profile.png" alt="user-pic">
+            <h3>{{ username }}</h3>
+        </div>
+        <hr>
+
+        <a href="#" class="sub-menu-link" (click)="navigateToProfile()">
+            <img src="../assets/images/images/profile.png" alt="profilLogo">
+            <p>Modifier le profil</p>
+            <span>></span>
+        </a>
+        <a href="#" class="sub-menu-link" (click)="navigateToSettings()">
+            <img src="../assets/images/images/setting.png" alt="profilLogo">
+            <p>Réglages</p>
+            <span>></span>
+        </a>
+        <a href="#" class="sub-menu-link" (click)="navigateToHelp()">
+            <img src="../assets/images/images/help.png" alt="profilLogo">
+            <p>Aide</p>
+            <span>></span>
+        </a>
+        <a href="#" class="sub-menu-link" (click)="logout()">
+            <img src="../assets/images/images/logout.png" alt="profilLogo">
+            <p>Déconnexion</p>
+            <span>></span>
+        </a>
+    </div>
+</div>

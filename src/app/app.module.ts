@@ -11,6 +11,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
 import { PatientComponent } from './pages/patient/patient.component';
+import { ConsultationComponent } from './pages/consultation/consultation.component';
+import { DropDownComponent } from './pages/drop-down/drop-down.component';
 
 const routes: Routes = [
   {
@@ -30,13 +32,18 @@ const routes: Routes = [
     component: PatientComponent,
   },
   {
+    path: 'consultation',
+    component: ConsultationComponent,
+  },
+  {
     path: 'register',
     component: RegisterComponent,
   },
   {
     path: '',
-    redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
-    pathMatch: 'full', // Assure une redirection complète
+    component: HomePageComponent,
+    // redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
+    // pathMatch: 'full', // Assure une redirection complète
   },
 ];
 
@@ -47,7 +54,9 @@ const routes: Routes = [
     RegisterComponent,
     HomePageComponent,
     DiagnosticComponent,
-    PatientComponent
+    PatientComponent,
+    ConsultationComponent,
+    DropDownComponent
   ],
   imports: [
     BrowserModule,

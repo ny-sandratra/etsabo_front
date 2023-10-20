@@ -1,0 +1,59 @@
+
+
+
+<nav>
+    <a [routerLink]="'/home-page'"><img src="../assets/images/fanaovana test_png.png" class="logo" alt="logo_e-tsabo"></a>
+    <ul>
+        <li class="liDuNav"><a class="aDuNav" [routerLink]="'/patient'" >Accueil</a></li>
+        <li class="liDuNav"><a class="aDuNav" href="#Apropos" >A propos</a></li>
+        <li class="liDuNav"><a class="aDuNav" href="#Services">Services</a></li>
+        <li class="liDuNav"><a class="aDuNav" href="#Contacts">Contacts</a></li>
+        <li class="liDuNav"><a class="aDuNav" [routerLink]="'/consultation'">Consultation</a></li>
+        
+    </ul>
+    <div>
+        <!-- <a routerLink="/login" class="login-btn aDuNav">Se connecter</a> -->
+        <app-drop-down></app-drop-down>
+        <!-- <img class="logoIspm" src="assets/images/ispm-logo.png" alt="logoIspm"> -->
+    </div>    
+
+</nav>
+<!-- <div class="fond"><img src="../../../assets/images/tension.jpg" alt="tension"></div> -->
+<form>
+    <div class="divSelect">
+        <h1>E-Tsabo</h1>
+        <select>
+            <option selected class="selected">Choisir votre medecin</option>
+            <option>Docteur1</option>
+            <option>Docteur2</option>
+            <option>Docteur3</option>
+            <option>Docteur4</option>
+            <option>Docteur5</option>
+        </select>
+    </div>
+    <div class="separation"></div>
+    <div class="corps-formulaire">
+        <div class="droite">
+            <div class="groupe">
+                <label class="sympt">Veuillez indiquer vos symptômes</label>
+                <textarea placeholder="Saisissez ici..."></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="pied-formulaire" align="center">
+        <button>Envoyer</button>
+    </div>
+</form>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

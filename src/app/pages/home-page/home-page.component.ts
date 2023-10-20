@@ -2,8 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import * as AOS from 'aos';
 
-
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

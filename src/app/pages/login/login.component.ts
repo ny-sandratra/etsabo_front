@@ -1,3 +1,6 @@
+
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -7,12 +10,14 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: [
     './login.component.scss',
-  '../../../../node_modules/font-awesome/css/font-awesome.css',]
+    '../../../../node_modules/font-awesome/css/font-awesome.css',],
+    encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent  {
   username: string = '';

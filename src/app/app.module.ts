@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+
+
+
+
+
 import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Routes,RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
+import { ClientConnectedComponent } from './pages/client-connected/client-connected.component';
+import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connected.component';
+import { ConsultationComponent } from './pages/consultation/consultation.component';
 
 
 export function tokenGetter() {
@@ -34,8 +43,20 @@ const routes: Routes = [
     component: HomePageComponent,
   },
   {
+    path: 'client',
+    component: ClientConnectedComponent,
+  },
+  {
+    path: 'doctor',
+    component: DoctorConnectedComponent,
+  },
+  {
     path: 'diagnostic',
     component: DiagnosticComponent,
+  },
+  {
+    path: 'consultation',
+    component: ConsultationComponent,
   },
   {
     path: 'register',
@@ -43,8 +64,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
-    pathMatch: 'full', // Assure une redirection complète
+    component:HomePageComponent,
+    // redirectTo: '/home-page', // Redirige la route vide vers 'home-page'
+    // pathMatch: 'full', // Assure une redirection complète
   },
 ];
 
@@ -54,7 +76,10 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomePageComponent,
-    DiagnosticComponent
+    DiagnosticComponent,
+    ClientConnectedComponent,
+    DoctorConnectedComponent,
+    ConsultationComponent
   ],
   imports: [
     BrowserModule,

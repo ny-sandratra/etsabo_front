@@ -82,9 +82,10 @@ const routes: Routes = [
     RegisterComponent,
     HomePageComponent,
     DiagnosticComponent,
+    RegisterComponent,
     PatientComponent,
     ConsultationComponent,
-    DropDownComponent
+    DropDownComponent,
     LogoutComponent,
     ClientConnectedComponent,
     DoctorConnectedComponent,

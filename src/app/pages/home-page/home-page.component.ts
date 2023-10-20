@@ -4,8 +4,6 @@ import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import * as AOS from 'aos';
 
-
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

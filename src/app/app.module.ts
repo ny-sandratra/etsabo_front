@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-
-
-
-
-
-import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
-import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { Routes,RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { DiagnosticComponent } from './pages/diagnostic/diagnostic.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { ClientConnectedComponent } from './pages/client-connected/client-connected.component';
 import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connected.component';
 import { ConsultationComponent } from './pages/consultation/consultation.component';
+
 
 
 
@@ -83,7 +77,7 @@ const routes: Routes = [
     RegisterComponent,
     HomePageComponent,
     DiagnosticComponent,
-    LogoutComponent
+    LogoutComponent,
     ClientConnectedComponent,
     DoctorConnectedComponent,
     ConsultationComponent
@@ -96,13 +90,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     JwtModule.forRoot(jwtModuleOptions),
     HttpClientModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => localStorage.getItem('access_token'), // Nom du champ où vous stockez le token
-        allowedDomains: ['example.com'], // Domaines autorisés (peut être un tableau de domaines)
-        disallowedRoutes: ['example.com/unauthorized'], // Routes non autorisées (peut être un tableau de routes)
-      },
-    }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

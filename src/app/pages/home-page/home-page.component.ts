@@ -11,6 +11,7 @@ import * as AOS from 'aos';
   '../../../../node_modules/font-awesome/css/font-awesome.css',],
   encapsulation: ViewEncapsulation.None
 })
+
 export class HomePageComponent implements OnInit {
   loaderVisible : boolean = true;
   userInfo: any;

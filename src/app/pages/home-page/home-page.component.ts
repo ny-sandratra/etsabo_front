@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import * as AOS from 'aos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -16,11 +17,10 @@ export class HomePageComponent implements OnInit {
   loaderVisible : boolean = true;
   userInfo: any;
 
-  constructor(private jwtHelper: JwtHelperService, private authService : AuthService, private userService : UserService) {  }
+  constructor(private jwtHelper: JwtHelperService, private authService : AuthService, private userService : UserService, private router:Router) {  }
  
   isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
-    // Vérifie si le token est expiré ou s'il est invalide
     return !this.jwtHelper.isTokenExpired(token);
   }
 
@@ -31,10 +31,14 @@ export class HomePageComponent implements OnInit {
       this.userService.setUserInfo(token);
       this.userInfo = this.userService.getUserInfo();      
       this.loaderVisible = false;
-      //console.log(decodedToken);
     }
     
     
+    
+  }
+  logout(): void {
+    localStorage.removeItem('access_token');
+    this.router.navigate(['']);
   }
 
 }

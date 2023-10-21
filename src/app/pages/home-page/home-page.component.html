@@ -11,11 +11,6 @@
             <ul>
 
 
-
-            
-
-
-
                 <li class="liDuNav"><a class="aDuNav" [routerLink]="'home-page'" >Accueil</a></li>
                 <li class="liDuNav"><a class="aDuNav" href="#Apropos">A propos</a></li>
                 <li class="liDuNav"><a class="aDuNav" href="#Services">Services</a></li>
@@ -23,44 +18,14 @@
                <li *ngIf="isAuthenticated()" class="liDuNav"><a class="aDuNav" routerLink="/consultation">Consultation</a></li>
 
 
-
             </ul>
-            <div>
-                <img  *ngIf="isAuthenticated()"class="user_pic" src="../assets/images/images/profile.png" alt="user-pic" onclick="toggleMenu()">
-                <a *ngIf="!isAuthenticated()" routerLink="/login" class="login-btn aDuNav">Se connecter</a>
-                <img class="logoIspm" src="assets/images/ispm-logo.png" alt="logoIspm">
-            </div>
-            <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-                <div class="user-info">
-                    <img src="../assets/images/images/profile.png" alt="suer-pic">
-                    <h3>{{userInfo.username}}</h3>
-                </div>
-                <hr>
-
-                <a href="#" class="sub-menu-link">
-                    <img src="../assets/images/images/profile.png" alt="profilLogo">
-                    <p>Modifier profile</p>
-                    <span>></span>
-                </a>
-                <a href="#" class="sub-menu-link">
-                    <img src="../assets/images/images/setting.png" alt="profilLogo">
-                    <p>Réglages</p>
-                    <span>></span>
-                </a>
-                <a href="#" class="sub-menu-link">
-                    <img src="../assets/images/images/help.png" alt="profilLogo">
-                    <p>Aide</p>
-                    <span>></span>
-                </a>
-                <a (click)="logout()" class="sub-menu-link">
-                    <img src="../assets/images/images/logout.png" alt="profilLogo">
-                    <p>Déconnexion</p>
-                    <span>></span>
-                </a>
-
-            </div>
-        </div>  
+        <div>
+            <a *ngIf="!isAuthenticated()"routerLink="/login" class="login-btn aDuNav">Se connecter</a> 
+            <app-drop-down *ngIf="isAuthenticated()"></app-drop-down>
+            <img *ngIf="!isAuthenticated()" class="logoIspm" src="../assets/images/ispm-logo.png" alt="logoIspm">
+        </div>
+           
+        
         </nav>
 
         <div class="content1" id="Accueil">
@@ -69,7 +34,7 @@
 
         <div class="content2">
             <h2 class="anim_typewrite">Santé Connectée, Diagnostic Intelligent : Votre Bien-être en Ligne.</h2>
-            <a routerLink="/register" class="btn anim">S'inscrire</a>
+            <a *ngIf="!isAuthenticated()" routerLink="/register" class="btn anim">S'inscrire</a>
         </div>
 
         <img src="assets/images/photo_accueil.png" alt="photo_accueil" class="feature-img1 anim">

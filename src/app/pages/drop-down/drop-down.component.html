@@ -1,12 +1,12 @@
 <div>
     <img class="user_pic" src="../assets/images/images/profile.png" alt="user-pic" (click)="toggleMenu()">
-    <img class="logoIspm" src="../assets/images/ispm-logo.png" alt="logoIspm">
+    <img  class="logoIspm" src="../assets/images/ispm-logo.png" alt="logoIspm">
 </div>
 <div class="sub-menu-wrap" id="subMenu" [class.open-menu]="menuOpen">
     <div class="sub-menu">
         <div class="user-info">
             <img src="../assets/images/images/profile.png" alt="user-pic">
-            <h3>{{ username }}</h3>
+            <h3>{{ userInfo.username }}</h3>
         </div>
         <hr>
 

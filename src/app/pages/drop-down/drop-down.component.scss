@@ -1,16 +1,20 @@
 /* menu contextuel */
+
+
 /* menu contextuel */
-.user_pic{
+
+.user_pic {
     width: 40px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #1acbeb;
-  }
-  .user_pic:hover{
+}
+
+.user_pic:hover {
     border: 2px solid #8fe31c;
-  }
-  
-  .sub-menu-wrap{
+}
+
+.sub-menu-wrap {
     position: absolute;
     top: 100%;
     right: 10%;
@@ -20,35 +24,42 @@
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
-  }
-  .sub-menu-wrap.open-menu{
+}
+
+.sub-menu-wrap.open-menu {
     max-height: 400px;
-  }
-  .sub-menu{
+}
+
+.sub-menu {
     background: #8fe31c;
     padding: 20px;
     margin: 10px;
-  }
-  .user-info{
+}
+
+.user-info {
     display: flex;
     align-items: center;
-  }
-  .user-info h3{
+}
+
+.user-info h3 {
     font-weight: 500;
-  }
-  .user-info img{
+}
+
+.user-info img {
     width: 60px;
     border-radius: 50%;
     margin-right: 15px;
-  }
-  .sub-menu hr{
+}
+
+.sub-menu hr {
     border: 0;
     height: 1px;
     width: 100%;
     background: #ccc;
     margin: 15px 0 10px;
-  }
-  .sub-menu-link{
+}
+
+.sub-menu-link {
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -57,26 +68,32 @@
     text-decoration: none;
     color: #525252;
     margin: 12px 0;
-  }
-  .sub-menu-link p{
+}
+
+.sub-menu-link p {
     width: 100px;
     margin: 0;
     flex: 1;
-  }
-  .sub-menu-link:hover p{
+}
+
+.sub-menu-link:hover p {
     font-weight: 600;
-  }
-  .sub-menu-link img{
+}
+
+.sub-menu-link img {
     width: 40px;
     background: #e5e5e5;
     border-radius: 50%;
     padding: 8px;
     margin-right: 15px;
-  }
-  .sub-menu-link span{
+}
+
+.sub-menu-link span {
     font-size: 22px;
     transition: 0.5s;
-  }
-  .sub-menu-link:hover span{
+}
+
+.sub-menu-link:hover span {
     transform: translateX(5px);
-  }
+}
+

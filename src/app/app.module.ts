@@ -17,6 +17,7 @@ import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connec
 import { ConsultationComponent } from './pages/consultation/consultation.component';
 import { PageDoctorComponent } from './pages/page-doctor/page-doctor.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 
 
 export function tokenGetter() {
@@ -100,7 +101,8 @@ const routes: Routes = [
     ClientConnectedComponent,
     DoctorConnectedComponent,
     PageDoctorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavBarComponent
 
   ],
   imports: [

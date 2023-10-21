@@ -1,26 +1,25 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../../services/auth.service';
 import { DropDownComponent } from '../drop-down/drop-down.component';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { UserService } from '../../services/user.service';
 import * as AOS from 'aos';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss',
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss',
   '../../../../node_modules/font-awesome/css/font-awesome.css',],
   encapsulation: ViewEncapsulation.None
 })
+export class NavBarComponent implements OnInit {
 
-export class HomePageComponent implements OnInit {
   loaderVisible : boolean = true;
   userInfo: any;
 
-  constructor(private jwtHelper: JwtHelperService, private authService : AuthService, private userService : UserService, private router:Router) {  }
- 
+  constructor(private jwtHelper: JwtHelperService, private authService : AuthService, private userService : UserService, private router:Router) { }
+
   isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
     return !this.jwtHelper.isTokenExpired(token);
@@ -34,13 +33,6 @@ export class HomePageComponent implements OnInit {
       this.userInfo = this.userService.getUserInfo();      
       this.loaderVisible = false;
     }
-    
-    
-    
-  }
-  logout(): void {
-    localStorage.removeItem('access_token');
-    this.router.navigate(['']);
   }
 
 }

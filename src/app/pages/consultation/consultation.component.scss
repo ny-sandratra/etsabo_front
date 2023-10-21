@@ -21,68 +21,9 @@
   position: relative;
 }
 
-nav {
-  position: fixed;
-  top: -150px;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 100;
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: medium dashed green;
-}
-
-.logo{
-  width: 140px;
-}
-
-nav ul li{
-  display: inline-block;
-  list-style: none;
-  margin: 10px 15px;
-  transition: 0.5s;
-}
-
-nav ul li:hover{
-  color: #00796b;
-  transform: scale(1.5);
-      
-}
-
-nav ul li::after{
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: #00796b;
-  display: block;
-  margin: auto;
-  transition: 1s;
-}
-
-nav ul li:hover::after{
-  width: 100%;
-}
-
-nav ul li .aDuNav{
-  text-decoration: none;
-  color: #333;
-  font-weight: 400;
-}
 
 
-.login-btn{
-  text-decoration: none;
-  color: #333;
-  margin-right: 15px;
-  font-weight: 400;
-  transition: 0.5s;
-}
-.login-btn:hover{
-  color: #1acbeb;
-}
+
 
 .btn{
   display: inline-block;
@@ -152,17 +93,18 @@ nav ul li .aDuNav{
 
 
 .form{
+  position: relative;
+  // position: absolute;
   text-align: center;
   align-items: center;
   width: 325px;
   height: 400px;
   background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
-  position: absolute;
   top: 165px;
   left: 780px;
   transform: translate(0%,-5%);
   border-radius: 10px;
-  padding-top: 10px; 
+  // padding-top: 10px; 
 }
 .form .lien:hover{
   color: green;

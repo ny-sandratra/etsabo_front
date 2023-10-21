@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    max-width: 1480px;
 }
 
 .logoIspm {
@@ -253,6 +254,11 @@ nav ul li .aDuNav {
     margin-top: 5px;
 }
 
+.icons{
+    margin-top: 70px;
+    margin-right: 20px;
+}
+
 .icons a {
     text-decoration: none;
     color: #fff;
@@ -286,17 +292,19 @@ nav ul li .aDuNav {
 }
 
 .divP {
-    margin: 10px 0;
+    margin: -15px 0;
     margin-left: 35px;
     align-items: center;
     width: 200px;
     height: 80px;
-    // margin:10px 0 30px 35px;
 }
+
+
 
 .content .form .divP.anim p {
     align-items: center;
-    margin: 5px 0 5px;
+    margin-left: 32px;
+    margin-bottom: 40px;
     width: 100px;
     color: #1acbeb;
     overflow: hidden;

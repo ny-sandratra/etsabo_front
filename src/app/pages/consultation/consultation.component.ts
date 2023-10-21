@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { DropDownComponent } from '../drop-down/drop-down.component';
 import { UserService } from '../../services/user.service';
+import {NavBarComponent} from '../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-consultation',

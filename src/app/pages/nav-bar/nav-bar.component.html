@@ -1,0 +1,26 @@
+
+
+<div class="hero1">
+
+    <nav>
+        <a href="Accueil.html"><img src="assets/images/fanaovana test_png.png" class="logo" alt="logo_e-tsabo"></a>
+        <ul>
+
+
+           <li class="liDuNav"><a class="aDuNav" href="#Accueil" routerLinkActive="active">Accueil</a></li>
+            <li class="liDuNav"><a class="aDuNav" href="#Apropos">A propos</a></li>
+            <li class="liDuNav"><a class="aDuNav" href="#Services">Services</a></li>
+            <li class="liDuNav"><a class="aDuNav" href="#Contacts">Contacts</a></li>
+           <li *ngIf="isAuthenticated" class="liDuNav"><a class="aDuNav" routerLink="/consultation" routerLinkActive="active">Consultation</a></li>
+     
+
+
+        </ul>
+    <div>
+        <a *ngIf="!isAuthenticated()"routerLink="/login" class="login-btn aDuNav">Se connecter</a> 
+        <app-drop-down *ngIf="isAuthenticated()"></app-drop-down>
+        <img *ngIf="!isAuthenticated()" class="logoIspm" src="../assets/images/ispm-logo.png" alt="logoIspm">
+    </div>
+       
+    
+    </nav>

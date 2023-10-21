@@ -10,7 +10,6 @@ export class LogoutComponent {
   constructor(private authService: AuthService, private router:Router) {}
 
   logout(): void {
-    // Appelez la méthode de déconnexion de votre service d'authentification
     this.authService.logout();
     this.router.navigate(['']);
   }

@@ -65,7 +65,7 @@ export class LoginComponent  {
           // this.authMessageHTMLSafe = this.sanitizeHtml(this.authMessage);
           const accessToken = response.token;
           localStorage.setItem('access_token', accessToken);
-          this.router.navigate(['/client']);
+          this.router.navigate(['']);
 
         }
         else{

@@ -15,6 +15,8 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { ClientConnectedComponent } from './pages/client-connected/client-connected.component';
 import { DoctorConnectedComponent } from './pages/doctor-connected/doctor-connected.component';
 import { ConsultationComponent } from './pages/consultation/consultation.component';
+import { PageDoctorComponent } from './pages/page-doctor/page-doctor.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 export function tokenGetter() {
@@ -69,10 +71,18 @@ const routes: Routes = [
     component: LogoutComponent,
   },
   {
-    path: '',
+    path:'',
     component: HomePageComponent,
 
   },
+  {
+    path:'not-found',
+    component:NotFoundComponent
+  },
+  {
+    path:'**',
+    redirectTo:'/not-found'
+  }
 ];
 
 @NgModule({
@@ -89,6 +99,8 @@ const routes: Routes = [
     LogoutComponent,
     ClientConnectedComponent,
     DoctorConnectedComponent,
+    PageDoctorComponent,
+    NotFoundComponent
 
   ],
   imports: [

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-drop-down',
@@ -6,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drop-down.component.scss']
 })
 export class DropDownComponent implements OnInit {
+  userInfo : any;
   menuOpen: boolean = false;
-  username: string = "Edrick fibber's";
+  isAuthenticated : boolean = false;
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
+
 
   ngOnInit(): void {
+    const token: any = localStorage.getItem('access_token');
+    if(token){
+      this.userService.setUserInfo(token);
+      this.userInfo = this.userService.getUserInfo();
+      this.isAuthenticated = true;
   }
+}
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
@@ -31,6 +41,8 @@ export class DropDownComponent implements OnInit {
   }
 
   logout() {
-    // Logique de déconnexion
+    localStorage.removeItem('access_token');
+    this.isAuthenticated = false;
+    this.router.navigate(['']);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { DropDownComponent } from '../drop-down/drop-down.component';
-
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-consultation',
@@ -11,9 +11,17 @@ import { DropDownComponent } from '../drop-down/drop-down.component';
 })
 export class ConsultationComponent implements OnInit {
 
-  constructor() { }
+  userInfo: any;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    const token: any = localStorage.getItem('access_token');
+    if(token){
+      this.userService.setUserInfo(token);
+      this.userInfo = this.userService.getUserInfo();
+      
+    }
   }
 
 }

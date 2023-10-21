@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../../services/auth.service';
+import { DropDownComponent } from '../drop-down/drop-down.component';
 import { UserService } from '../../services/user.service';
 import * as AOS from 'aos';
 import { Router } from '@angular/router';

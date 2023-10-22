@@ -15,13 +15,13 @@ export class RegistrationService {
   register(username: string, email: string, name:string, password: string,confirm_password:string, gender: number, birthdate: Date): Observable<any> {
 
     const registrationData = {
-      'username': username,
-      'password': password,
-      'confirm_password': confirm_password,
-      'email': email,
-      'name': name,
-      'birthdate': birthdate,
-      'gender': gender
+      "username": username,
+      "password": password,
+      "confirm_password": confirm_password,
+      "email": email,
+      "name": name,
+      "birthdate": birthdate,
+      "gender": gender
 
     };
 

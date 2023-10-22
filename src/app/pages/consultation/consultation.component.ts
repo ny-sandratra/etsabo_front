@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { DropDownComponent } from '../drop-down/drop-down.component';
 import { UserService } from '../../services/user.service';
-
 import { DoctorService } from '../../services/doctor.service';
-
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -17,25 +15,22 @@ export class ConsultationComponent implements OnInit {
 
   userInfo: any;
   doctors : any;
-  constructor(private userService: UserService, private doctorService : DoctorService) { 
-
-  this.doctorService.getListDoctor()
-  .subscribe((response: any) => {
-
-    this.doctors = response.doctors
-    console.log(this.doctors)
-  },
-  (error : any) => {
-    console.log(error)
-  }
-  )
-  
-
   emailSubject = '';
   emailRecipient = '';
   emailMessage = '';
   
-  constructor(private userService: UserService, private http: HttpClient) { }
+  constructor(private userService: UserService, private http: HttpClient, private doctorService : DoctorService) {
+    // this.doctorService.getListDoctor()
+    // .subscribe((response: any) => {
+  
+    //   this.doctors = response.doctors
+    //   console.log(this.doctors)
+    // },
+    // (error : any) => {
+    //   console.log(error)
+    // }
+    // )
+   }
 
   sendEmail() {
     const emailData = {

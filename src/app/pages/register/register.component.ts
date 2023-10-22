@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   name: string = '';
   email: string = '';
   gender: number = 0;
-  //birthdate : Date = new Date();
+  birthdate : Date = new Date();
   password : string ='';
   confirm_password : string =''
   regMessageVisible = false;
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       gender: ['', Validators.required],
-      //birthdate : new FormControl(new Date()),
+      birthdate : new FormControl(new Date()),
       password : ['', Validators.required],
       confirm_password : ['', Validators.required]
     });
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
       this.username = this.registrationForm.get('username')?.value;
       this.name = this.registrationForm.get('name')?.value;
       this.email = this.registrationForm.get('email')?.value;
-     // this.birthdate = this.registrationForm.get('birthdate')?.value;
+      this.birthdate = this.registrationForm.get('birthdate')?.value;
       this.password = this.registrationForm.get('password')?.value;
       this.confirm_password = this.registrationForm.get('confirm_password')?.value;
       this.gender = this.registrationForm.get('gender')?.value;
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    this.registrationService.register(this.username,this.email,this.name,this.password,this.confirm_password,this.gender)
+    this.registrationService.register(this.username,this.email,this.name,this.password,this.confirm_password, this.birthdate,this.gender)
     .subscribe((response : any) => {
       if (response.success){
         console.log(response);

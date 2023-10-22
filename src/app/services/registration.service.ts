@@ -12,9 +12,10 @@ export class RegistrationService {
   private apiUrl = 'http://localhost:5000/api/user_route/registration';
   constructor(private http: HttpClient) { }
 
-  register(username: string, email: string, name:string, password: string,confirm_password:string, gender: number, birthdate: Date): Observable<any> {
+  register(username: string, email: string, name:string, password: string,confirm_password:string, gender: number): Observable<any> {
 
     const registrationData = {
+
       "username": username,
       "password": password,
       "confirm_password": confirm_password,
@@ -22,6 +23,7 @@ export class RegistrationService {
       "name": name,
       "birthdate": birthdate,
       "gender": gender
+
 
     };
 

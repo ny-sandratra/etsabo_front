@@ -17,7 +17,7 @@
 
 </nav>
 <!-- <div class="fond"><img src="../../../assets/images/tension.jpg" alt="tension"></div> -->
-<form>
+<!-- <form>
     <div class="divSelect">
         <h1>E-Tsabo</h1>
         <select>
@@ -38,8 +38,32 @@
     <div class="pied-formulaire" align="center">
         <button>Envoyer</button>
     </div>
+</form> -->
+<form (ngSubmit)="sendEmail()">
+    <div class="divSelect">
+        <h1>E-Tsabo</h1>
+        <select [(ngModel)]="emailRecipient" name="recipient" id="recipient">
+            <option selected class="selected">Choisir votre medecin</option>
+            <option value="mosesyharitra@gmail.com">Docteur1</option>
+            <option value="rindraniaina26@gmail.com">Docteur2</option>
+            <option value="nysandratra177@gmail.com">Docteur3</option>
+            <option value="valisoarakotonirainy@gmail.com">Docteur4</option>
+            <option value="beloha26@gmail.com">Docteur5</option>
+        </select>
+    </div>
+    <div class="separation"></div>
+    <div class="corps-formulaire">
+        <div class="droite">
+            <div class="groupe">
+                <input type="text" id="subject" value="Consultation" [(ngModel)]="emailSubject" name="subject" class="sympt">
+                <textarea id="message" [(ngModel)]="emailMessage" name="message" placeholder="Saisissez ici..."></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="pied-formulaire" align="center">
+        <button type="submit">Envoyer</button>
+    </div>
 </form>
-
 
 <div class="css-loader">
     <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>

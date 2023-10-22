@@ -1,7 +1,11 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { DropDownComponent } from '../drop-down/drop-down.component';
 import { UserService } from '../../services/user.service';
+
 import { DoctorService } from '../../services/doctor.service';
+
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-consultation',
   templateUrl: './consultation.component.html',
@@ -26,6 +30,29 @@ export class ConsultationComponent implements OnInit {
   }
   )
   
+
+  emailSubject = '';
+  emailRecipient = '';
+  emailMessage = '';
+  
+  constructor(private userService: UserService, private http: HttpClient) { }
+
+  sendEmail() {
+    const emailData = {
+      subject: this.emailSubject,
+      recipient: this.emailRecipient,
+      message: this.emailMessage
+    };
+    
+    this.http.post('http://localhost:5000/send', emailData).subscribe(
+      (response) => {
+        console.log('E-mail envoyé avec succès', response);
+      },
+      (error) => {
+        console.error('Erreur lors de l\'envoi de l\'e-mail', error);
+      }
+    );
+
 
 }
   

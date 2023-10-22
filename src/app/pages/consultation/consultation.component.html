@@ -22,11 +22,8 @@
         <h1>E-Tsabo</h1>
         <select>
             <option selected class="selected">Choisir votre medecin</option>
-            <option>Docteur1</option>
-            <option>Docteur2</option>
-            <option>Docteur3</option>
-            <option>Docteur4</option>
-            <option>Docteur5</option>
+            <option *ngFor ="let doctor of doctors" > Dr {{doctor.name}} ({{doctor.specialite}})</option>
+
         </select>
     </div>
     <div class="separation"></div>
